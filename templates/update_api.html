@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update API Key</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">Enter Your OpenWeatherMap API Key</h3>
+        <p class="text-center text-muted mb-3">Get your free API key from <a href="https://home.openweathermap.org/api_keys" target="_blank">OpenWeatherMap</a>.</p>
+        {% if error %}
+        <div class="alert alert-danger text-center">{{ error }}</div>
+        {% endif %}
+        <form method="POST" class="mx-auto" style="max-width: 500px;">
+            <div class="mb-3">
+                <label for="api_key" class="form-label">API Key</label>
+                <input type="text" class="form-control" name="api_key" id="api_key" placeholder="Enter API Key"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Save Key</button>
+        </form>
+        {% if has_api_key %}
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-secondary">← Back to Home</a>
+        </div>
+        {% endif %}
+
+    </div>
+</body>
+
+</html>
